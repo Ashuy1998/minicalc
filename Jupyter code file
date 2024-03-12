@@ -1,0 +1,54 @@
+from tkinter import *
+from tkinter import messagebox
+
+win=Tk()
+win.state("zoomed")
+win.configure(bg="yellow")
+
+
+def addclick():
+    a=float(e1.get())
+    b=float(e2.get())
+    messagebox.showinfo("Addition",a+b)
+
+def mulclick():
+    a=float(e1.get())
+    b=float(e2.get())
+    messagebox.showinfo("Multiply",a*b)
+    
+def subclick():
+    a=float(e1.get())
+    b=float(e2.get())
+    messagebox.showinfo("Subtraction",a-b)
+
+def divclick():
+    a=float(e1.get())
+    b=float(e2.get())
+    messagebox.showinfo("Division",a/b)
+    
+    
+l1=Label(win,text="1st num:",font=('',20,'bold'),bg="yellow")
+l1.place(x=100,y=100)
+
+e1=Entry(win,font=('',20,'bold'),bd=5)
+e1.place(x=250,y=100)
+
+l2=Label(win,text="2nd num:",font=('',20,'bold'),bg="yellow")
+l2.place(x=100,y=200) 
+
+e2=Entry(win,font=('',20,'bold'),bd=5)
+e2.place(x=250,y=200)
+
+b1=Button(win,text="add",font=('',20,'bold'),bd=5,command=addclick)
+b1.place(x=250,y=300)
+
+b2=Button(win,text="mul",font=('',20,'bold'),bd=5,command=mulclick)
+b2.place(x=350,y=300)
+
+b3=Button(win,text="sub",font=('',20,'bold'),bd=5,command=subclick)
+b3.place(x=250,y=350)
+
+b4=Button(win,text="Div",font=('',20,'bold'),bd=5,command=divclick)
+b4.place(x=350,y=350)
+
+win.mainloop()
